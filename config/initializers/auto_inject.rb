@@ -1,15 +1,18 @@
 class Interview::Container
     extend Dry::Container::Mixin    
 end
+container = Interview::Container
 
-Interview::Container.register('service.doctor.creator') do
+container.register('service.doctor.creator') do
     Doctor::Creator.new
 end
 
-Interview::Container.register('service.doctor.lister') do
+container.register('service.doctor.lister') do
     Doctor::Lister.new
 end
 
+container.register('service.doctor.updater') do
+    Doctor::Updater.new
+end
 
-
-AutoInject = Dry::AutoInject(Interview::Container)
+AutoInject = Dry::AutoInject(container)

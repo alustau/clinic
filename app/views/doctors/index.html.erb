@@ -7,7 +7,7 @@
 
                     <div class="row pull-right">    
                         <div class="col-md-6">
-                            <%= link_to "Novo", controller: "doctors", action: "new" %>
+                            <%= link_to "New", controller: "doctors", action: "new" %>
                         </div>
                     </div>
                 </div>
@@ -30,9 +30,8 @@
                                   <td><%= doctor.name %></td>
                                   <td><%= doctor.crm %></td>
                                   <td>
-                                      <a class="btn btn-info btn-xs" title="Appointments" href="{{ route('doctor.appointments', ['doctor' => $doctor->id]) }}">
-                                          <span class="glyphicon glyphicon-menu-hamburger"></span>
-                                      </a>
+                                      
+                                      <%= link_to "Edit", controller: "doctors", action: "edit", id: doctor.id %>
                                       <a class="btn btn-warning btn-xs" href="{{ route('doctor.edit', ['doctor' => $doctor->id]) }}">
                                           <span class="glyphicon glyphicon-edit"></span>
                                       </a>
