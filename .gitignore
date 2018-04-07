@@ -10,6 +10,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+node-v0.8.16.tar.gz
 /node-v0.8.16/*
 !/log/.keep
 !/tmp/.keep
