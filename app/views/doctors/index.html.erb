@@ -30,11 +30,8 @@
                                   <td><%= doctor.name %></td>
                                   <td><%= doctor.crm %></td>
                                   <td>
-                                      
                                       <%= link_to "Edit", controller: "doctors", action: "edit", id: doctor.id %>
-                                      <a class="btn btn-warning btn-xs" href="{{ route('doctor.edit', ['doctor' => $doctor->id]) }}">
-                                          <span class="glyphicon glyphicon-edit"></span>
-                                      </a>
+                                      <%= link_to "Remove", doctor, method: :delete, data: { confirm: "Are you sure about it?" } %>
                                   </td>
                                 </tr>
                               <% end %>

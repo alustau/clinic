@@ -15,4 +15,8 @@ container.register('service.doctor.updater') do
     Doctor::Updater.new
 end
 
+container.register('service.doctor.deleter') do
+    Doctor::Deleter.new
+end
+
 AutoInject = Dry::AutoInject(container)

@@ -4,7 +4,8 @@ class DoctorsController < ApplicationController
     include AutoInject[
         lister: 'service.doctor.lister',
         creator: 'service.doctor.creator',
-        updater: 'service.doctor.updater'
+        updater: 'service.doctor.updater',
+        deleter: 'service.doctor.deleter',
     ]
 
     def index
@@ -43,7 +44,15 @@ class DoctorsController < ApplicationController
               format.html { render :edit }
             end
         end
-    end 
+    end
+
+    def destroy
+        deleter.delete(params[:id])
+        
+        respond_to do |format|
+            format.html { redirect_to doctors_url, flash: {success: 'Doctor was successfully removed.'} }
+        end
+    end
 
     private
     
