@@ -1,0 +1,61 @@
+<div class="container">
+   <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Doctor Form
+
+                    <div class="row pull-right">
+                        <div class="col-md-6">
+                            <%= link_to "Voltar", controller: "doctors", action: "index" %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <%= form_for(@doctor, html: { class: "form-horizontal" }) do |f| %>
+                        <div class="form-group">
+                            <%= f.label(:name, "Name", class: "col-sm-1") %>
+                            <div class="col-sm-11">
+                                <%= f.text_field(:name, class: "form-control") %>
+
+                                <% if @doctor.errors.include?(:name) %>
+                                    <% name_errors = @doctor.errors[:name] %>
+
+                                    <% if name_errors.kind_of?(Array) %>
+                                        <% name_errors.each do |error| %>
+                                            <span class="help-block">
+                                                <strong>* <%= error %></strong>
+                                            </span>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                                        
+                        </div>
+                        <div class="form-group">
+                            <%= f.label(:crm, "CRM", class: "col-sm-1") %>
+                            <div class="col-sm-11">
+                                <%= f.text_field(:crm, class: "form-control") %>
+
+                                <% if @doctor.errors.include?(:crm) %>
+                                    <% name_errors = @doctor.errors[:crm] %>
+
+                                    <% if name_errors.kind_of?(Array) %>
+                                        <% name_errors.each do |error| %>
+                                            <span class="help-block">
+                                                <strong>* <%= error %></strong>
+                                            </span>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </div>                  
+                        </div>
+
+                        <%= f.submit("Create", class: "btn btn-primary") %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

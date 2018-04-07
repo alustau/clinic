@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Doctor list
+
+                    <div class="row pull-right">    
+                        <div class="col-md-6">
+                            <%= link_to "Novo", controller: "doctors", action: "new" %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>CRM</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% @doctors.each do |doctor| %>
+                                <tr>
+                                  <td><%= doctor.id %></td>
+                                  <td><%= doctor.name %></td>
+                                  <td><%= doctor.crm %></td>
+                                  <td>
+                                      <a class="btn btn-info btn-xs" title="Appointments" href="{{ route('doctor.appointments', ['doctor' => $doctor->id]) }}">
+                                          <span class="glyphicon glyphicon-menu-hamburger"></span>
+                                      </a>
+                                      <a class="btn btn-warning btn-xs" href="{{ route('doctor.edit', ['doctor' => $doctor->id]) }}">
+                                          <span class="glyphicon glyphicon-edit"></span>
+                                      </a>
+                                  </td>
+                                </tr>
+                              <% end %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

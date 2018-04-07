@@ -35,6 +35,8 @@ gem 'jquery-rails', '~> 4.3.1'
 
 gem 'dry-auto_inject', '~> 0.4.6'
 
+gem 'pry-rails', '~> 0.3.6'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
