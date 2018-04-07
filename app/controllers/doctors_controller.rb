@@ -7,7 +7,7 @@ class DoctorsController < ApplicationController
     def index
         @doctors = lister.all 
     end
-    
+
     def new
         @doctor = creator.model.new
     end
@@ -17,7 +17,7 @@ class DoctorsController < ApplicationController
         
         respond_to do |format|
             if @doctor.persisted?
-              format.html { redirect_to doctors_url, notice: 'Doctor was successfully created.' }
+              format.html { redirect_to doctors_url, flash: { success: 'Doctor was successfully created.'} }
             else
               format.html { render :new }
             end
