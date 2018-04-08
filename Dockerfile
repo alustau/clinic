@@ -9,5 +9,6 @@ COPY Gemfile.lock /clinic/Gemfile.lock
 RUN bundle install
 COPY . /clinic
 RUN chown -R $USER:$USER .
-RUN mkdir -p /clinic/tmp/db/mysql
+RUN mkdir -pv tmp/db/mysql
 RUN chmod -R 755 /clinic/tmp/db/mysql
+VOLUME /clinic
