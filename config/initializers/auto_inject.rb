@@ -1,6 +1,7 @@
 class Interview::Container
     extend Dry::Container::Mixin    
 end
+
 container = Interview::Container
 
 container.register('service.doctor.creator') do
