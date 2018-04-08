@@ -45,3 +45,6 @@ $ docker-compose run web rake db:migrate
 6- Start up the server
 ```shell
 $ docker-compose up
+```
+http://0.0.0.0:3000
+
