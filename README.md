@@ -1,24 +1,47 @@
-# README
+Clinic 
+=============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Clinic is a simple project with goal to practice ruby on rails
 
-Things you may want to cover:
+## Table of Contents
+- [Features](#features)
+- [Required](#required)
+- [Installation](#installation)
 
-* Ruby version
+## Features
 
-* System dependencies
+* Create a Doctor
+* List all Doctors
+* Update a Doctor
+* Remove a Doctor
 
-* Configuration
+## Required
 
-* Database creation
+* Docker
+* Docker Compose
 
-* Database initialization
+## Installation
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1- Clone this project running this:
+```shell
+$ git clone https://github.com/alustau/clinic.git 
+```
+2- Enter in project folder.
+```shell
+$ cd clinic
+```
+3- Build the Dockerfile:
+```shell
+$ docker-compose build
+```
+4- Create database
+```shell
+$ docker-compose run web rake db:create
+```
+5- Run migration
+```shell
+$ docker-compose run web rake db:migrate
+```
+6- Start up the server
+```shell
+$ docker-compose up
