@@ -14,7 +14,7 @@ node-v0.8.16.tar.gz
 /node-v0.8.16/*
 !/log/.keep
 !/tmp/.keep
-
+!/tmp/db/mysql/.keep
 /node_modules
 /yarn-error.log
 
