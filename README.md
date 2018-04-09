@@ -7,6 +7,7 @@ Clinic is a simple project with goal to practice ruby on rails
 - [Features](#features)
 - [Required](#required)
 - [Installation](#installation)
+- [Testing](#testing)
 
 ## Features
 
@@ -26,7 +27,7 @@ Clinic is a simple project with goal to practice ruby on rails
 ```shell
 $ git clone https://github.com/alustau/clinic.git 
 ```
-2- Enter in project folder.
+2- Enter in project folder:
 ```shell
 $ cd clinic
 ```
@@ -34,17 +35,24 @@ $ cd clinic
 ```shell
 $ docker-compose build
 ```
-4- Create database
-```shell
-$ docker-compose run web rake db:create
-```
-5- Run migration
-```shell
-$ docker-compose run web rake db:migrate
-```
-6- Start up the server
+4- Boot the app:
 ```shell
 $ docker-compose up
 ```
-http://0.0.0.0:3000
+5- In another terminal, create database:
+```shell
+$ docker-compose run web rake db:create
+```
+6- Run migrations
+```shell
+$ docker-compose run web rake db:migrate
+```
 
+8- Go to http://0.0.0.0:3000
+
+## Testing
+
+To run unit test of app, run this command:
+```shell
+$ docker-compose run web rake test
+```
