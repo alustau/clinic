@@ -48,7 +48,7 @@ $ docker-compose run web rake db:create
 $ docker-compose run web rake db:migrate
 ```
 
-8- Go to http://0.0.0.0:3000/doctors
+7- Go to http://0.0.0.0:3000/doctors
 
 ## Testing
 
